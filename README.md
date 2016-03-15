@@ -1,6 +1,6 @@
 # backupProject
 
-A shell scripts what to backup your project.
+Some shell scripts what to backup your project.
 
 ## mac
 
