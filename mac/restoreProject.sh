@@ -28,11 +28,11 @@ if [[ -a $1 ]]; then
 	output=`echo $file1|sed -n "s/\.Src\.7z/.output/p"`
 	if [[ -a $file1 ]]; then
 		printMsg "Extracting $file1..."
-		7za x -aoa -y $file1 -o$output -p$password
+		7za x -aoa -y -o$output -p$password $file1
 	fi
 	if [[ -a $file2 ]]; then
 		printMsg "Extracting $file2..."
-		7za x -aoa -y $file2 -o$output -p$password
+		7za x -aoa -y -o$output -p$password $file2
 	fi
 	printMsg "Output Dir: $output"
 	printMsg "Done."

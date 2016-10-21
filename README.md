@@ -9,23 +9,35 @@ Install 7z by Homebrew
 
 ### backup
 
-Step 1: cp .sh files to your project directory location
+Step 1: Copy *.sh files to your project directory location
 
-Step 2: Edit .sh file: set 'projPath' and 'password' to yours
+Step 2: Edit .sh file: set variables 'projPath', 'password' and etc. for yours
 
-Step 3: `chmod +x backupProject.sh restoreProject.sh`
+Step 3: `chmod +x *.sh`
 
-Step 4: `./backupProject.sh` 
+Step 4: `./runCleanAndBackup.sh` or `./runCleanAndCloneBranch.sh` + `runbackup.sh`
+```
+runCleanAndBackup.sh = runCleanAndCloneBranch.sh + master branch + deptch 1 + runbackup.sh
+```
 
-You will see two 7z-file: 'YOURPROJECTNAME.DATETIME.Src.7z' and 'YOURPROJECTNAME.DATETIME.gitpack.7z'
+Step 5: when copy to server failed, to run `./copytoserver.sh`
+
+You will see tow same `DATETIME` 7z files: 
+* `YOURPROJECTNAME.DATETIME.(barnch).Src.7z`
+* `YOURPROJECTNAME.DATETIME.(barnch).gitpack.7z`
+
+and other `DATETIME` 7z file:
+* `YOURPROJECTNAME.OTHERDATETIME.(barnch).Src_nogit.7z`
 
 ### restore
 
-Step 1: `./restoreProject.sh YOURPROJECTNAME.DATETIME.Src.7z`
+Step 1: `./restoreProject.sh YOURPROJECTNAME.DATETIME.(barnch).Src.7z`
 
-Step 2: `open YOURPROJECTNAME.DATETIME.output\`
+Step 2: `open YOURPROJECTNAME.DATETIME.(barnch).output\`
 
+or
 
+restore no-git source code with `7za x -aoa -y -o$output -p$password YOURPROJECTNAME.OTHERDATETIME.(barnch).Src_nogit.7z`
 
 ## windows
 
