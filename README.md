@@ -41,9 +41,9 @@ restore no-git source code with `7za x -aoa -y -o$output -p$password YOURPROJECT
 
 ## windows
 
-`制作备份.bat` only for Simplified Chinese Windows.
+`make_backup.bat` required powershell to `Get-Date -Format 'yyyy-MM-dd HH-mm-ss'`
 
-Download last extra file ("7z1514-extra.7z") and put it with `制作备份.bat`
+Download last extra file ("7z1514-extra.7z") and put it with `make_backup.bat`
 * http://www.7-zip.org/
 * https://sourceforge.net/projects/sevenzip/
 
@@ -54,7 +54,7 @@ Step 1: Copy 7za.exe(in 7zXXXX-extra.7z) and .bat to your project folder locatio
 
 Step 2: Edit .bat file: set 'slnDir' and 'password' to yours
 
-Step 3: Run `制作备份.bat`
+Step 3: Run `make_backup.bat`
 
 You can see a 7z-file: YOURPROJECTNAME.DATETIME.Src.7z
 
